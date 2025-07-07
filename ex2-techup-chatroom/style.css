@@ -1,1 +1,114 @@
-/* Start coding here */
+body {
+  margin: 0;
+  font-family: 'Sarabun', sans-serif;
+  background: #fff;
+}
+
+.header {
+  background: #888;
+  color: #fff;
+  padding: 8px 8px 8px 4px;
+  font-size: 20px;
+}
+
+.chat-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+  padding: 0 20px;
+}
+
+.chat-left, .chat-right {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.chat-left {
+  margin-top: 60px;
+}
+
+.chat-bubble {
+  max-width: 140px;
+  padding: 12px 24px; /* เพิ่ม padding ให้กล่องดูโปร่งขึ้น */
+  border-radius: 16px;
+  color: #fff;
+  font-size: 18px;
+  background: #888;
+  width: fit-content;
+}
+
+.chat-bubble.left {
+  align-self: flex-start;
+  min-width: 200px;
+  /* หรือจะใช้ width: 140px; ก็ได้ */
+  justify-content: flex-start;
+}
+
+.chat-bubble.right {
+  align-self: flex-end;
+  background: #eee;
+  color: #333;
+  position: relative;
+  min-width: 200px;
+}
+
+.chat-bubble.green {
+  position: relative;
+  background: #0c0;
+  color: black;
+}
+
+.chat-bubble-wrapper {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  width: fit-content;
+}
+
+.close-btn {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: #ccc;
+  border: none;
+  border-radius: 50%;
+  width: 22px;
+  height: 22px;
+  font-size: 14px;
+  cursor: pointer;
+  color: #666;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.chat-bubble.green::after {
+  content: "";
+  position: absolute;
+  top: 8px;
+  right: -12px;
+  width: 0;
+  height: 0;
+  border-top: 10px solid #0c0;
+  border-right: 0 solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 12px solid transparent;
+  z-index: 1;
+}
+
+.chat-bubble.green::before {
+  content: "";
+  position: absolute;
+  top: 8px;
+  right: -16px;
+  width: 0;
+  height: 0;
+  border-top: 10px solid #fff;
+  border-right: 0 solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 12px solid transparent;
+  z-index: 0;
+}
